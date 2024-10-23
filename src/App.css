@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+  --clr-pri: 96 1 211;
+  --clr-sec: 253 52 110;
+  --clr-ter: 252 220 0;
+  --clr-bg: 8 20 32;
+  --clr-header: 8 20 32;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #70798b;
+  font-family: 'Quicksand', sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Nunito', sans-serif;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  max-width: 65ch;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: #70798b;
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-gap, 2em);
+}
+
+.grid-container {
+  @media (min-width: 65rem) {
+    grid-template-columns:
+      minmax(1.18rem, 1fr)
+      repeat(2, minmax(0, 40rem))
+      minmax(1.18rem, 1fr);
+  }
+}
+
+.grid-col {
+  @media (min-width: 48rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 63.75rem) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid-col-3 {
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 5px;
+
+  @media (min-width: 48rem) {
+    grid-auto-columns: calc(100% / 3);
+  }
+}

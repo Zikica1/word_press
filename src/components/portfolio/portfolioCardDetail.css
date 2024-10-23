@@ -1,0 +1,39 @@
+.portfolio-card-detail {
+  color: rgb(var(--clr-header));
+  background-color: rgb(243, 244, 246);
+  padding: 2em 2.18em 21.87em;
+}
+
+.portfolio-card-detail h2 {
+  font-size: 1.875rem;
+  text-align: center;
+  margin-block: 1em 2em;
+}
+
+.portfolio-card-detail img {
+  border-radius: 24px;
+  width: 100%;
+  max-height: 37.5em;
+  object-fit: cover;
+}
+
+.portfolio-card-des {
+  padding: 1.25em 2.187em;
+}
+
+.portfolio-card-des > *:first-child {
+  font-size: 1.56rem;
+  font-weight: 600;
+  margin-block: 1em 2em;
+}
+
+.portfolio-card-des > *:not(:first-child) {
+  @media (min-width: 48rem) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5em;
+  }
+
+  @media (min-width: 65rem) {
+    gap: clamp(4em, 8vw, 8em);
+  }
+}

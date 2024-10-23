@@ -1,0 +1,45 @@
+.portfolio {
+  color: rgb(var(--clr-header));
+  background-color: rgb(243, 244, 246);
+  text-align: center;
+  padding: 2em 2.18em 24em;
+}
+
+.portfolio h1 {
+  margin-inline: auto;
+}
+
+.project-wrap {
+  --grid-gap: 1.875em;
+
+  margin-block-start: 4em;
+  text-align: left;
+}
+
+.project-card {
+  transition: translate 0.5s ease;
+  width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.project-card img {
+  border-radius: 24px;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.project-card img:hover {
+  filter: drop-shadow(-5px 10px 20px rgba(0 0 0/0.2));
+  cursor: pointer;
+}
+
+.description {
+  color: rgb(var(--clr-header));
+}
+
+.project-card h3 {
+  font-size: 1.25rem;
+  margin-block: 1em 0.8em;
+}

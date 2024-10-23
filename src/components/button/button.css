@@ -1,0 +1,22 @@
+.button-main {
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  padding: 0.81em 2.62em;
+  border: none;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 1rem;
+  background-color: rgb(var(--clr-pri));
+  box-shadow: -10px 30px 50px rgba(var(--clr-pri) / 0.25);
+  display: none;
+  transition: all 0.25s ease;
+
+  @media (min-width: 48rem) {
+    display: block;
+  }
+}
+
+.button-main:hover {
+  background-color: rgb(var(--clr-sec));
+  box-shadow: -10px 30px 50px rgba(var(--clr-sec) / 0.35);
+}

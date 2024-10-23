@@ -1,0 +1,35 @@
+.hadingMain h1 {
+  color: #081420;
+  font-size: 2.187rem;
+  line-height: 1.1;
+  font-family: 'Nunito', sans-serif;
+  text-transform: capitalize;
+  /* max-width: 430px; */
+  max-width: 12.289em;
+  margin-inline: auto;
+  /* margin-block: 1.14em; */
+
+  @media (min-width: 48rem) {
+    font-size: 3.44rem;
+    /* max-width: 630px; */
+    max-width: 11.44em;
+  }
+
+  @media (min-width: 65rem) {
+    font-size: 3.12rem;
+    /* max-width: 430px; */
+    max-width: 8.613em;
+    margin-inline: unset;
+    margin-block: 0.4em 0.2em;
+  }
+}
+
+.hadingMain h5 {
+  color: rgb(var(--clr-sec));
+  font-size: 1rem;
+  text-transform: capitalize;
+
+  @media (min-width: 48rem) {
+    font-size: 1.25rem;
+  }
+}

@@ -1,0 +1,65 @@
+.button-sec {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 28px;
+  border: none;
+  padding: 14px 30px;
+
+  @media (min-width: 45rem) {
+    font-size: 1rem;
+  }
+}
+
+.button-sec-1 {
+  color: rgb(255 255 255);
+  background-color: rgb(var(--clr-sec));
+  box-shadow: -5px 20px 30px rgba(var(--clr-sec) / 0.3);
+  will-change: opacity, background, transform;
+  transition: opacity 0.5s ease, background 0.3s ease, transform 1s ease;
+}
+
+.button-sec-1:hover {
+  color: rgb(var(--clr-header));
+  background-color: rgb(var(--clr-ter));
+  box-shadow: -5px 20px 30px rgba(var(--clr-ter) / 0.3);
+}
+
+.button-sec-2 {
+  color: rgb(var(--clr-header));
+  background-color: rgb(var(--clr-ter));
+  box-shadow: -5px 20px 30px rgba(var(--clr-ter) / 0.3);
+  will-change: opacity, background, transform;
+  transition: opacity 0.5s ease, background 0.3s ease, transform 0.5s ease;
+}
+
+.button-sec-2:hover {
+  color: rgb(255 255 255);
+  background-color: rgb(var(--clr-sec));
+  box-shadow: -5px 20px 30px rgba(var(--clr-sec) / 0.3);
+}
+
+.button-sec-3 {
+  color: rgb(255 255 255);
+  background-color: rgb(var(--clr-pri));
+  box-shadow: -5px 20px 30px rgba(var(--clr-pri) / 0.3);
+  cursor: pointer;
+}
+
+.button-sec-3:hover {
+  background-color: rgb(var(--clr-sec));
+  box-shadow: -5px 20px 30px rgba(var(--clr-sec) / 0.3);
+}
+
+.button-sec-4 {
+  color: rgb(255 255 255);
+  background-color: rgb(var(--clr-sec));
+  box-shadow: -5px 20px 30px rgba(var(--clr-sec) / 0.3);
+  margin-inline-end: 1em;
+  transition: all 0.3s ease;
+}
+
+.button-sec-4:hover {
+  background-color: rgb(var(--clr-pri));
+  box-shadow: -5px 20px 30px rgba(var(--clr-pri) / 0.3);
+}

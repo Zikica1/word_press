@@ -1,0 +1,107 @@
+.projects-main {
+  text-align: center;
+  padding: 2em 2.18em 6.25em;
+  background-color: rgb(243, 244, 246);
+}
+
+.projects-main h1 {
+  margin-inline: auto;
+}
+
+.projects-main-container {
+  position: relative;
+}
+
+.projects-wrap {
+  display: flex;
+  gap: 1em;
+
+  margin-block-start: 4em;
+  width: 100%;
+  margin-inline: auto;
+  overflow-x: auto;
+  scrollbar-color: transparent transparent;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.projects-wrap::-webkit-scrollbar {
+  height: 1px;
+  background-color: transparent;
+}
+
+.projects-wrap .project-card {
+  flex: 0 0 100%;
+
+  @media (min-width: 768px) {
+    flex: 0 0 calc(100% / 3);
+  }
+}
+
+.projects-wrap .description-project {
+  background-color: rgb(255 255 255);
+  border-radius: 24px;
+  padding: 24px 12px 22px 33px;
+  max-width: 80%;
+  margin-inline: auto;
+  text-align: left;
+  transform: translateY(-50%);
+}
+
+.projects-wrap .description-project h3 {
+  color: rgb(var(--clr-header));
+  font-size: 1.125rem;
+}
+
+.projects-wrap .description-project p {
+  font-size: 0.75rem;
+}
+
+.buttons-wrapper {
+  position: absolute;
+  z-index: 10;
+  top: 25%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-project {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgb(255 255 255);
+  box-shadow: 0 0 20px rgba(0 0 0/0.2);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: background 0.25s ease-in-out;
+}
+
+.button-project:hover,
+.button-project:focus-visible {
+  background-color: rgb(253 52 110);
+  box-shadow: 0 0 20px rgba(253 52 110/0.5);
+}
+
+.button-project-left {
+  transform: translateX(-50%);
+}
+
+.button-project-right {
+  transform: translateX(50%);
+}
+
+.button-project svg {
+  fill: rgb(112, 112, 112);
+  width: 20px;
+  height: 20px;
+  transition: fill 0.2s ease-in-out;
+}
+
+.button-project:hover svg,
+.button-project:focus-visible svg {
+  fill: rgb(255 255 255);
+}

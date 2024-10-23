@@ -1,0 +1,156 @@
+.testimonial {
+  background-color: rgb(255 255 255);
+  padding: 6.25em 2.18em;
+  text-align: center;
+
+  @media (min-width: 65rem) {
+    /* padding: 6.25em 1.18em; */
+    text-align: left;
+  }
+}
+
+.testimonial h2 {
+  margin-block-end: 2em;
+  line-height: 1.1;
+}
+
+.testimonial-wrapper {
+  display: flex;
+  gap: 1px;
+  overflow-x: auto;
+  scrollbar-color: transparent transparent;
+  scroll-behavior: smooth;
+}
+
+.testimonial-wrapper::-webkit-scrollbar {
+  height: 1px;
+  background-color: transparent;
+}
+
+.test-card {
+  --grid-gap: 3.75em;
+  flex: 0 0 100%;
+  transition: translate 0.5s ease;
+
+  @media (min-width: 65rem) {
+    --grid-gap: 0;
+  }
+}
+
+.grid-container--test {
+  @media (min-width: 65rem) {
+    grid-template-columns:
+      minmax(1.18em, 1fr)
+      minmax(0, 50em)
+      minmax(0, 30em)
+      minmax(1.18em, 1fr);
+  }
+}
+
+.test-img {
+  @media (min-width: 65rem) {
+    grid-column: 2;
+  }
+}
+
+.test-img-wrap {
+  position: relative;
+}
+
+.test-img img {
+  border-radius: 24px;
+}
+
+.test-icon {
+  display: none;
+
+  @media (min-width: 65rem) {
+    width: 5.375em;
+    height: 5.375em;
+    background-color: rgb(253 52 110);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+  }
+}
+
+.test-icon svg {
+  fill: rgb(255 255 255);
+  width: 1.875em;
+  height: 1.875em;
+}
+
+.test-card-description {
+  @media (min-width: 65rem) {
+    grid-column: 3;
+    text-align: left;
+    padding-inline-start: 6em;
+  }
+}
+
+.test-card-description h3 {
+  color: rgb(var(--clr-header));
+  font-size: 1.25rem;
+  margin-block: 0.2em 1.66em;
+}
+
+.test-card-description h3:has(+ .test-text) {
+  @media (min-width: 48rem) {
+    font-size: 1.875rem;
+  }
+}
+
+.test-text {
+  margin-block-end: 2.25em;
+  margin-inline: auto;
+}
+
+.fa-star {
+  color: rgb(253 52 110);
+}
+
+.fa-solid {
+  font-size: 0.875rem;
+}
+.fa-regular {
+  font-size: 0.875rem;
+}
+
+.stars-container ~ p {
+  margin-block: 1em;
+  margin-inline: auto;
+}
+
+.test-buttons-container button {
+  width: 2.375em;
+  height: 2.375em;
+  margin-inline-end: 1em;
+  border-radius: 50%;
+  background-color: rgb(243, 244, 246);
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.test-buttons-container button:hover,
+.test-buttons-container button:focus-visible {
+  background-color: rgb(253 52 110);
+  box-shadow: -15px 5px 20px rgba(253 52 110/0.2);
+}
+
+.test-buttons-container svg {
+  fill: rgb(114, 113, 113);
+  transition: fill 0.2s ease;
+}
+
+.test-buttons-container button:hover svg,
+.test-buttons-container button:focus-visible svg {
+  fill: rgb(255 255 255);
+}

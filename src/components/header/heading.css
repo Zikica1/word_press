@@ -1,0 +1,22 @@
+.subtitle {
+  color: rgb(var(--clr-sec));
+  font-size: 1rem;
+  line-height: 4.6em;
+
+  @media (min-width: 48rem) {
+    font-size: 1.25rem;
+  }
+}
+
+.title {
+  color: rgb(var(--clr-header));
+  font-size: 1.875rem;
+  margin: 0.2em 1.23em 0.4em;
+
+  @media (min-width: 48rem) {
+    /* font-size: 3.43rem; */
+    font-size: 3.125rem;
+    line-height: 1.1;
+    margin-inline: 0;
+  }
+}
