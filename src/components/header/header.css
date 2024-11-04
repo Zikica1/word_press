@@ -1,4 +1,5 @@
 .header {
+  min-height: 7.25em;
   display: flex;
   align-items: center;
   justify-content: space-between;

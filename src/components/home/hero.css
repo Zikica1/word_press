@@ -72,9 +72,15 @@
   ) {
   position: absolute;
   z-index: 2;
+  opacity: 0;
+}
+
+.hero-img-wrap :is(.hero-img-8, .hero-img-5) {
+  opacity: 1;
 }
 
 .hero-img-1 {
+  opacity: 0;
   max-width: 95%;
   margin-inline: auto;
 

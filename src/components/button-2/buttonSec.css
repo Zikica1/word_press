@@ -63,3 +63,8 @@
   background-color: rgb(var(--clr-pri));
   box-shadow: -5px 20px 30px rgba(var(--clr-pri) / 0.3);
 }
+
+.button-1,
+.button-2 {
+  opacity: 0;
+}
