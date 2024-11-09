@@ -54,6 +54,7 @@
 .hero-img-wrap {
   position: relative;
   isolation: isolate;
+  will-change: transform;
 
   @media (min-width: 65rem) {
     grid-column: 3;

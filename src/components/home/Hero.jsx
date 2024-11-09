@@ -16,6 +16,7 @@ const Hero = () => {
   const [scope, animate] = useAnimate();
   const [scopeImg, animateImg] = useAnimate();
   const [scopeImg2, animateImg2] = useAnimate();
+
   const isInView = useInView(scopeImg, {
     margin: '0px 0px -150px 0px',
     once: true,
@@ -28,17 +29,13 @@ const Hero = () => {
 
   useEffect(() => {
     const handleHeroAni = async () => {
-      await animate(
-        '.hero-ani-1',
-        { opacity: [0, 1], y: [100, 0] },
-        { duration: 1 }
-      );
+      await animate('.hero-ani-1', { opacity: 1, y: 0 }, { duration: 1 });
       await animate(
         '.button-1',
         { opacity: 1, scale: [0.8, 1.2, 1] },
         {
           type: 'tween',
-          duration: 0.8,
+          duration: 0.9,
         }
       );
       await animate(
@@ -46,7 +43,7 @@ const Hero = () => {
         { opacity: 1, scale: [0.8, 1.2, 1] },
         {
           type: 'tween',
-          duration: 0.8,
+          duration: 0.9,
         }
       );
     };
@@ -112,7 +109,7 @@ const Hero = () => {
     <section className='hero'>
       <div className='hero-wrapper grid grid-container'>
         <div ref={scope} className='hero-heading'>
-          <div className='hero-ani-1'>
+          <motion.div className='hero-ani-1' initial={{ opacity: 0, y: 100 }}>
             <HeadingMain
               title='make more time for the work that matters most'
               subtitle='We Are WordPress Agency'
@@ -122,7 +119,7 @@ const Hero = () => {
               Focus on what matters while we take care of your WordPress site.
               Fast, reliable, and tailored IT services for your digital success.
             </p>
-          </div>
+          </motion.div>
 
           <div className='button-wrap flex'>
             <div className='button-1'>
@@ -140,9 +137,9 @@ const Hero = () => {
         </div>
 
         <div ref={scopeImg} className='hero-img-wrap'>
-          <div className='hero-img-1'>
+          <motion.div className='hero-img-1'>
             <img src={heroImg1} alt='' />
-          </div>
+          </motion.div>
 
           <div ref={scopeImg2}>
             <motion.div className='hero-img-2' initial={{ x: -50 }}>

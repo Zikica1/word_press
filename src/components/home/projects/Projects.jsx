@@ -1,6 +1,7 @@
 import './projects.css';
 import { useState, useRef } from 'react';
 import { flushSync } from 'react-dom';
+import { motion } from 'framer-motion';
 import PortfolioCard from '../../portfolio/PortfolioCard';
 import HeadingMain from '../../header/HeadingMain';
 import { projects } from '../../data/db';
@@ -86,8 +87,22 @@ const Projects = () => {
 
   return (
     <section className='projects-main'>
-      <HeadingMain title='The Works We Are Proud Of' subtitle='Portfolio' />
-      <div className='projects-main-container'>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, scale: [1.1, 1] }}
+        viewport={{ once: true, amount: 0.9 }}
+        transition={{ type: 'tween', duration: 1 }}
+      >
+        <HeadingMain title='The Works We Are Proud Of' subtitle='Portfolio' />
+      </motion.div>
+
+      <motion.div
+        className='projects-main-container'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, scale: [1.1, 1] }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ type: 'tween', duration: 1 }}
+      >
         <div
           onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
@@ -120,7 +135,7 @@ const Projects = () => {
             <FaChevronRight />
           </button>
         </div>
-      </div>
+      </motion.div>
 
       {projectFilt.map((__, id) => (
         <button

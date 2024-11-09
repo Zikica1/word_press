@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 import {
   FaLongArrowAltLeft,
   FaLongArrowAltRight,
@@ -7,7 +8,7 @@ import {
 
 const TestiCard = ({ value, handleNextClick, handlePrevClick, index }) => {
   return (
-    <div
+    <motion.div
       className='test-card grid grid-container grid-container--test'
       style={{ translate: `${-100 * index}%` }}
     >
@@ -38,10 +39,9 @@ const TestiCard = ({ value, handleNextClick, handlePrevClick, index }) => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
-
 TestiCard.propTypes = {
   value: PropTypes.object,
   handleNextClick: PropTypes.func,

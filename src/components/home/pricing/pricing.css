@@ -23,29 +23,20 @@
   --grid-gap: 0;
   --flow-space: 8em;
 
-  grid-template-columns: 1fr;
-  grid-auto-rows: auto 180px auto;
-  isolation: isolate;
-
   @media (min-width: 65rem) {
     --flow-space: 0;
-    /* grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); */
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.pricing-card {
-  grid-row: span 3;
-  display: grid;
-  grid-template-rows: subgrid;
-  background-color: rgb(25, 36, 49);
-  border-radius: 24px;
+.card-wrapper {
+  display: flex;
+  justify-content: center;
   width: 75%;
   margin-inline: auto;
-  position: relative;
 
   @media (min-width: 48rem) {
-    width: 60%;
+    width: 50%;
   }
 
   @media (min-width: 65rem) {
@@ -53,16 +44,23 @@
   }
 }
 
+.pricing-card {
+  display: grid;
+  grid-auto-rows: auto 180px auto;
+  background-color: rgb(25, 36, 49);
+  border-radius: 24px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
 .pricing-card-purchase {
   background-color: var(--text-color-2);
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  margin-left: -95%;
+  transform: translate(25px, 50px);
   border-radius: 24px;
-  transform: translate(8%, 9%);
   display: flex;
   align-items: flex-end;
   transition: all 0.25s ease-in-out;
@@ -72,8 +70,7 @@
   }
 }
 
-.pricing-card:hover .pricing-card-purchase,
-.pricing-card:focus-visible .pricing-card-purchase {
+.card-wrapper:hover .pricing-card-purchase {
   background-color: rgb(var(--clr-pri));
   box-shadow: -15px 15px 50px 20px rgba(var(--clr-pri) / 0.2);
 }
@@ -85,8 +82,8 @@
   transition: color 0.25s ease-in-out;
 }
 
-.pricing-card:hover .pricing-card-purchase a,
-.pricing-card:focus-visible .pricing-card-purchase a {
+.card-wrapper:hover .pricing-card-purchase a,
+.card-wrapper:focus-visible .pricing-card-purchase a {
   color: rgb(255 255 255);
 }
 
