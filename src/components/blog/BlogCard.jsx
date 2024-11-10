@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import ButtonSec from '../button-2/buttonSec';
+import { forwardRef } from 'react';
 
 const BlogDes = ({ description }) => {
   const des = description[0];
@@ -12,9 +13,9 @@ const BlogDes = ({ description }) => {
   );
 };
 
-const BlogCard = ({ blog, isHome }) => {
+const BlogCard = forwardRef(({ blog, isHome }, ref) => {
   return (
-    <div className={`blog-card ${!isHome && 'blog-card-how'}`}>
+    <div ref={ref} className={`blog-card ${!isHome && 'blog-card-how'}`}>
       <img
         src={blog.img}
         alt={blog.title}
@@ -43,7 +44,7 @@ const BlogCard = ({ blog, isHome }) => {
       </div>
     </div>
   );
-};
+});
 
 BlogCard.propTypes = {
   blog: PropTypes.object,
@@ -53,4 +54,6 @@ BlogCard.propTypes = {
 BlogDes.propTypes = {
   description: PropTypes.array,
 };
+
+BlogCard.displayName = 'BlogCard';
 export default BlogCard;
