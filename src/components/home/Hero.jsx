@@ -121,7 +121,7 @@ const Hero = () => {
             </p>
           </motion.div>
 
-          <div className='button-wrap flex'>
+          <div className='button-wrap'>
             <div className='button-1'>
               <ButtonSec bg='button-sec-1' ani='button-sec-1-ani'>
                 Watch Video

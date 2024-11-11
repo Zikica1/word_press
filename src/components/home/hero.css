@@ -43,8 +43,14 @@
 }
 
 .button-wrap {
+  display: flex;
   justify-content: center;
+  flex-direction: column;
   gap: 1.5em;
+
+  @media (min-width: 31.25rem) {
+    flex-direction: row;
+  }
 
   @media (min-width: 65rem) {
     justify-content: flex-start;

@@ -1,9 +1,10 @@
 import './footer.css';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useInView, useAnimate } from 'framer-motion';
 import Heading from '../header/Heading';
+import List from './List';
 import { Link } from 'react-router-dom';
 import { footer } from '../data/db';
-import PropTypes from 'prop-types';
 import logo from '../../assets/images/logo-white.png';
 import {
   FaFacebookF,
@@ -12,37 +13,72 @@ import {
   FaTwitter,
 } from 'react-icons/fa';
 
-const List = ({ title, text }) => {
-  return (
-    <div>
-      <h3 className='footer-title'>{title}</h3>
-      <ul>
-        {text.map((value, id) => (
-          <li key={id}>{value.list}</li>
-        ))}
-      </ul>
-    </div>
-  );
+const logoVariant = {
+  hidden: { opacity: 0, scale: 1.1 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: 'tween',
+      duration: 0.8,
+    },
+  },
 };
 
 const Footer = () => {
   const [text, setText] = useState('');
+  const [scopeHeading, animateCommunity] = useAnimate();
+  const isInView = useInView(scopeHeading, {
+    once: true,
+    amount: 0.8,
+  });
+  const refLogo = useRef(null);
+  const isInView2 = useInView(refLogo, {
+    once: true,
+    amount: 0.5,
+  });
 
   const data = new Date();
+
+  useEffect(() => {
+    const handleAnimation = async () => {
+      if (isInView) {
+        await animateCommunity(
+          '.content-anim',
+          { opacity: 1, y: 0 },
+          { type: 'tween', duration: 0.8 }
+        );
+        await animateCommunity(
+          '.form-community',
+          { opacity: 1, y: 0 },
+          { type: 'tween', duration: 0.8 }
+        );
+      }
+    };
+
+    handleAnimation();
+  }, [isInView, animateCommunity]);
+
   return (
     <footer className='footer'>
       <div className='our-community'>
-        <div className='our-community-des'>
-          <Heading
-            title='Subscribe To Our Newsletter'
-            subtitle='Join Our Community'
-          />
-          <p>
-            Stay updated with the latest news, exclusive offers, and insights by
-            joining our community today!
-          </p>
+        <div ref={scopeHeading} className='our-community-des'>
+          <motion.div className='content-anim' initial={{ opacity: 0, y: 50 }}>
+            <Heading
+              title='Subscribe To Our Newsletter'
+              subtitle='Join Our Community'
+            />
+            <p>
+              Stay updated with the latest news, exclusive offers, and insights
+              by joining our community today!
+            </p>
+          </motion.div>
 
-          <form className='form-community' onSubmit={(e) => e.preventDefault()}>
+          <motion.form
+            style={{ opacity: 0, y: -25 }}
+            className='form-community'
+            onSubmit={(e) => e.preventDefault()}
+          >
             <label htmlFor='email'>
               <input
                 type='email'
@@ -55,18 +91,24 @@ const Footer = () => {
             </label>
 
             <button type='submit'>Get Started</button>
-          </form>
+          </motion.form>
         </div>
       </div>
 
       <div className='footer-container'>
-        <div className='footer-logo'>
+        <motion.div
+          ref={refLogo}
+          className='footer-logo'
+          variants={logoVariant}
+          initial='hidden'
+          animate={isInView2 ? 'visible' : 'hidden'}
+        >
           <img src={logo} alt='' className='logo' />
-        </div>
+        </motion.div>
 
         <div className='footer-list-container'>
-          {footer.map((items) => (
-            <List {...items} key={items.id} />
+          {footer.map((items, index) => (
+            <List {...items} key={items.id} index={index} />
           ))}
         </div>
       </div>
@@ -91,11 +133,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-List.propTypes = {
-  title: PropTypes.string,
-  text: PropTypes.array,
 };
 
 export default Footer;

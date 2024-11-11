@@ -35,7 +35,16 @@ const BlogCards = ({ isHome = false }) => {
         backgroundColor: isHome ? '#ffffff' : '#f3f4f6',
       }}
     >
-      {isHome && <Heading title='Letest Posts' subtitle='Blog' />}
+      {isHome && (
+        <motion.div
+          initial={{ opacity: 0, scale: 1.1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.9 }}
+          transition={{ type: 'tween', duration: 1 }}
+        >
+          <Heading title='Letest Posts' subtitle='Blog' />
+        </motion.div>
+      )}
       <div className={`blog-card-wrap  ${isHome ? 'flex-wrap' : 'grid'}`}>
         {blogCardFil.map((blog, index) => (
           <MotionBlogCard
