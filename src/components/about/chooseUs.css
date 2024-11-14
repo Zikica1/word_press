@@ -7,10 +7,30 @@
 .choose-us {
   text-align: center;
   padding-block-end: 6.25em;
+
+  @media (min-width: 65rem) {
+    text-align: left;
+  }
+}
+
+.choose-us-wrap {
+  @media (min-width: 65rem) {
+    gap: 0;
+  }
 }
 
 .choose-us-des :is(h2, h5) {
   text-align: center;
+
+  @media (min-width: 65rem) {
+    text-align: left;
+  }
+}
+
+.choose-us-des {
+  @media (min-width: 65rem) {
+    grid-column: 2;
+  }
 }
 
 .choose-us-des h2 {
@@ -20,10 +40,14 @@
   }
 }
 
-.choose-us-des > p {
+.choose-us-des > div p {
   font-weight: 500;
   max-width: 420px;
   margin-inline: auto;
+
+  @media (min-width: 65rem) {
+    margin-inline: unset;
+  }
 }
 
 .chose-cards-container {
@@ -45,6 +69,10 @@
   border-radius: 50%;
   display: grid;
   place-content: center;
+
+  @media (min-width: 65rem) {
+    margin-inline: unset;
+  }
 }
 
 .chose-cards-container svg {
@@ -68,6 +96,10 @@
   --flow-space: 1.5em;
   position: relative;
   isolation: isolate;
+
+  @media (min-width: 65rem) {
+    grid-column: 3;
+  }
 }
 
 .choose-picture-1 img,
@@ -93,6 +125,12 @@
     z-index: -1;
     transform: translateY(-50%) translateX(5%);
   }
+
+  @media (min-width: 65rem) {
+    transform: none;
+    right: -30px;
+    top: 20px;
+  }
 }
 
 .choose-picture-4 {
@@ -101,5 +139,11 @@
     left: 0;
     z-index: -1;
     transform: translateY(30%) translateX(50%);
+
+    @media (min-width: 65rem) {
+      bottom: 100px;
+      left: 0;
+      transform: none;
+    }
   }
 }
