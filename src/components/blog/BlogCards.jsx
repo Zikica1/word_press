@@ -10,7 +10,7 @@ const MotionBlogCard = motion.create(BlogCard);
 
 const animations = [
   {
-    initial: { opacity: 0, x: -50 },
+    initial: { opacity: 0, x: -30 },
     animate: { opacity: 1, x: 0 },
   },
   {
@@ -18,7 +18,7 @@ const animations = [
     animate: { opacity: 1, scale: 1 },
   },
   {
-    initial: { opacity: 0, x: 50 },
+    initial: { opacity: 0, x: 30 },
     animate: { opacity: 1, x: 0 },
   },
 ];

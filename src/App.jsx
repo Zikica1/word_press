@@ -13,11 +13,12 @@ import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import PortfolioCardDetail from './components/portfolio/PortfolioCardDetail';
 import BlogCardDetail from './components/blog/BlogCardDetail';
+import NotFoundPage from './pages/NotFoundPage';
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path='/' element={<Layout />}>
+      <Route path='/' element={<Layout />} errorElement={<NotFoundPage />}>
         <Route index element={<Home />} />
         <Route path='about' element={<About />} />
         <Route path='projects' element={<Projects />} />

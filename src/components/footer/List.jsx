@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import PropTypes from 'prop-types';
 
 const listVariant = {
-  hidden: { opacity: 0, x: 50 },
+  hidden: { opacity: 0, x: 20 },
   visible: (index) => ({
     opacity: 1,
     x: 0,

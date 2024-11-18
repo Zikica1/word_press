@@ -4,13 +4,13 @@ import Footer from './footer/Footer';
 
 const Layout = () => {
   const location = useLocation();
-  // console.log(location);
+  console.log(location);
 
   return (
     <>
       <Header key={location.pathname} />
       <Outlet />
-      <Footer />
+      <Footer key={location.key} />
     </>
   );
 };
