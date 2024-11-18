@@ -2,6 +2,8 @@
   background-color: rgb(242, 244, 246);
   padding-block: 1.56em 22.12em;
   padding-inline: 2.18em;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .choose-us {

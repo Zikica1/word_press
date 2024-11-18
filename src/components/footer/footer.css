@@ -3,6 +3,8 @@
   background-color: rgb(var(--clr-bg));
   text-align: center;
   padding-inline: 2.18em;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 /*----- community ------ */

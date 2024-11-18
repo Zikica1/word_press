@@ -6,6 +6,8 @@
   background-color: rgb(var(--clr-bg));
   padding: 6.28em 2.18em 12em;
   text-align: center;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .pricing h2 {

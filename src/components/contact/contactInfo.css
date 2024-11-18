@@ -2,6 +2,8 @@
   background-color: #f2f4f6;
   padding-inline: 2.18em;
   padding-block: 3.5em 22.12em;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .contact-info {

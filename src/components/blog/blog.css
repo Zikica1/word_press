@@ -1,5 +1,7 @@
 .blog-cards {
   padding: 6.25em 2.18em calc(6.25em + 284px);
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 .blog-card-wrap {
