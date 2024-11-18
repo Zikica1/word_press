@@ -1,6 +1,6 @@
 import '../App.css';
 import Hero from '../components/home/Hero';
-import Service from '../components/home/service/service';
+import Service from '../components/home/service/Service';
 import Statistics from '../components/home/statistics/Statistics';
 import Team from '../components/home/team/Team';
 import Projects from '../components/home/projects/Projects';
