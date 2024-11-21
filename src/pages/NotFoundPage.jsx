@@ -16,7 +16,7 @@ const NotFoundPage = () => {
         style={{
           display: 'block',
           marginInline: 'auto',
-          marginBlock: '4em 0.5em',
+          marginBlock: '3em 0.5em',
           color: 'orange',
           fontSize: '30px',
         }}
