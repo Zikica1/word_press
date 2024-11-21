@@ -18,15 +18,39 @@ import NotFoundPage from './pages/NotFoundPage';
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path='/' element={<Layout />} errorElement={<NotFoundPage />}>
-        <Route index element={<Home />} />
-        <Route path='about' element={<About />} />
-        <Route path='projects' element={<Projects />} />
-        <Route path='projects/:id' element={<PortfolioCardDetail />} />
-        <Route path='/:id' element={<PortfolioCardDetail />} />
-        <Route path='blog' element={<Blog />} />
-        <Route path='blog/:id' element={<BlogCardDetail />} />
-        <Route path='contact' element={<Contact />} />
+      <Route path='/' element={<Layout />}>
+        <Route index element={<Home />} errorElement={<NotFoundPage />} />
+        <Route
+          path='about'
+          element={<About />}
+          errorElement={<NotFoundPage />}
+        />
+        <Route
+          path='projects'
+          element={<Projects />}
+          errorElement={<NotFoundPage />}
+        />
+        <Route
+          path='projects/:id'
+          element={<PortfolioCardDetail />}
+          errorElement={<NotFoundPage />}
+        />
+        <Route
+          path='/:id'
+          element={<PortfolioCardDetail />}
+          errorElement={<NotFoundPage />}
+        />
+        <Route path='blog' element={<Blog />} errorElement={<NotFoundPage />} />
+        <Route
+          path='blog/:id'
+          element={<BlogCardDetail />}
+          errorElement={<NotFoundPage />}
+        />
+        <Route
+          path='contact'
+          element={<Contact />}
+          errorElement={<NotFoundPage />}
+        />
       </Route>
     )
   );
