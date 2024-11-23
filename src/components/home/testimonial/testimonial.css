@@ -17,7 +17,7 @@
 .testimonial-wrapper {
   display: flex;
   gap: 1px;
-  overflow-x: auto;
+  overflow-x: hidden;
   scrollbar-color: transparent transparent;
   scroll-behavior: smooth;
 }
