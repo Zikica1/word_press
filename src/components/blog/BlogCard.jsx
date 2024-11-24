@@ -33,11 +33,11 @@ const BlogCard = forwardRef(({ blog, isHome }, ref) => {
         <BlogDes {...blog} />
 
         {isHome ? (
-          <ButtonSec url={blog.id} bg='button-sec-4'>
+          <ButtonSec url={`blog/${blog.id}`} bg='button-sec-4'>
             Read More
           </ButtonSec>
         ) : (
-          <ButtonSec url={blog.id} bg='button-sec-3'>
+          <ButtonSec url={`${blog.id}`} bg='button-sec-3'>
             Read More
           </ButtonSec>
         )}

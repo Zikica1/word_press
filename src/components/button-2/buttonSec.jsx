@@ -4,9 +4,10 @@ import './buttonSec.css';
 
 const ButtonSec = ({ children, bg, ani, url }) => {
   const location = useLocation();
-  const linkUrl = url || location.pathname;
+  const urlLink = url || location.pathname;
+
   return (
-    <Link to={linkUrl} className={`button-sec ${bg} ${ani}`}>
+    <Link to={`${urlLink}`} className={`button-sec ${bg} ${ani}`}>
       {children}
     </Link>
   );
@@ -16,7 +17,8 @@ ButtonSec.propTypes = {
   children: PropTypes.node,
   bg: PropTypes.string,
   ani: PropTypes.string,
-  url: PropTypes.string,
+  url: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  // url: PropTypes.string,
 };
 
 export default ButtonSec;

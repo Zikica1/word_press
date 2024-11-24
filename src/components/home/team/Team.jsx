@@ -52,12 +52,12 @@ const Team = () => {
         await teamAnimate2(
           '.button-4',
           { opacity: 1, scale: [0.8, 1.2, 1] },
-          { type: 'tween', duration: 0.5 }
+          { type: 'tween', duration: 0.7 }
         );
         await teamAnimate2(
           '.button-3',
           { opacity: 1, scale: [0.8, 1.2, 1] },
-          { type: 'tween', duration: 0.5 }
+          { type: 'tween', duration: 0.7 }
         );
       };
       handelAnimate();
