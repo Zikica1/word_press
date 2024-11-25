@@ -50,7 +50,6 @@ const BlogCardDetail = () => {
                   required
                   id='name'
                   name='name'
-                  autoFocus
                 />
               </label>
               <label htmlFor='email'>
@@ -60,7 +59,6 @@ const BlogCardDetail = () => {
                   required
                   id='email'
                   name='email'
-                  autoFocus
                 />
               </label>
             </div>
@@ -70,7 +68,6 @@ const BlogCardDetail = () => {
                 placeholder='Website'
                 id='website'
                 name='website'
-                autoFocus
               />
             </label>
             <label htmlFor='comment'>
@@ -79,7 +76,6 @@ const BlogCardDetail = () => {
                 placeholder='Comment'
                 id='comment'
                 name='comment'
-                autoFocus
               ></textarea>
             </label>
             <button type='submit'>Submit</button>
