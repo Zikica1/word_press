@@ -41,7 +41,7 @@
 .projects-wrap .description-project {
   background-color: rgb(255 255 255);
   border-radius: 24px;
-  padding: 24px 12px 22px 33px;
+  padding: 1.5em 0.75em 1.375em 2.06em; /*correction in em */
   max-width: 80%;
   margin-inline: auto;
   text-align: left;
