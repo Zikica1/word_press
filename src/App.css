@@ -42,7 +42,14 @@ a {
   text-decoration: none;
 }
 
-a:active {
+a:active,
+a:focus {
+  color: transparent;
+  outline: none;
+}
+
+button:focus,
+button:active {
   color: transparent;
 }
 
