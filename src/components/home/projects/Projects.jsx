@@ -97,6 +97,7 @@ const Projects = () => {
       </motion.div>
 
       <motion.div
+        style={{ position: 'relative' }}
         className='projects-main-container'
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1, scale: [1.1, 1] }}
@@ -123,12 +124,14 @@ const Projects = () => {
         </div>
         <div className='buttons-wrapper'>
           <button
+            style={{ position: 'absolute', left: 0, top: '25%' }}
             onClick={handleClickPrev}
             className='button-project button-project-left'
           >
             <FaChevronLeft />
           </button>
           <button
+            style={{ position: 'absolute', right: 0, top: '25%' }}
             onClick={handleClickNext}
             className='button-project button-project-right'
           >
