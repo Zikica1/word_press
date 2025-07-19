@@ -19,8 +19,6 @@
 .project-card {
   transition: translate 0.5s ease;
   width: 100%;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 .project-card img {

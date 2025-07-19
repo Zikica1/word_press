@@ -10,26 +10,11 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 const Projects = () => {
   const projectFilt = projects.slice(0, 6);
   const [index, setIndex] = useState(0);
-  const [isMouseDown, setIsMouseDown] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const refItem = useRef(null);
   const refCard = useRef(null);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollPosition = refItem.current.scrollLeft;
-  //     const width = refItem.current.offsetWidth;
-  //     const newIndex = Math.round(scrollPosition / width);
-  //     setIndex(newIndex);
-  //   };
-
-  //   refItem.current.addEventListener('scroll', handleScroll);
-
-  //   return () => {
-  //     refItem.current.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, [index]);
 
   const handleClickNext = () => {
     flushSync(() => {
@@ -63,26 +48,41 @@ const Projects = () => {
     });
   };
 
-  const handleMouseDown = (e) => {
-    setIsMouseDown(true);
-    setStartX(e.pageX - -refItem.current.offsetLeft);
-    setScrollLeft(refItem.current.scrollLeft);
-  };
-
-  const handleMouseUp = () => {
-    setIsMouseDown(false);
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isMouseDown) return;
+  const handlePointerDown = (e) => {
     e.preventDefault();
+    setIsDragging(false);
+    setStartX(e.pageX - refItem.current.offsetLeft);
+    setScrollLeft(refItem.current.scrollLeft);
+    window.addEventListener('pointerup', handlePointerUp);
+    if (refItem.current) {
+      refItem.current.classList.add('dragging');
+    }
+  };
+
+  const handlePointerMove = (e) => {
+    if (e.buttons !== 1) return;
     const x = e.pageX - refItem.current.offsetLeft;
-    const walk = (x - startX) * 1;
+    const walk = x - startX;
+    if (Math.abs(walk) > 5) {
+      setIsDragging(true);
+    }
     refItem.current.scrollLeft = scrollLeft - walk;
   };
 
-  const handleMouseLeave = () => {
-    setIsMouseDown(false);
+  const handlePointerUp = () => {
+    setTimeout(() => setIsDragging(false), 0);
+    if (refItem.current) {
+      refItem.current.classList.remove('dragging');
+    }
+    window.removeEventListener('pointerup', handlePointerUp);
+  };
+
+  const handlePointerLeave = () => {
+    setIsDragging(false);
+    if (refItem.current) {
+      refItem.current.classList.remove('dragging');
+    }
+    window.removeEventListener('pointerup', handlePointerUp);
   };
 
   return (
@@ -105,10 +105,10 @@ const Projects = () => {
         transition={{ type: 'tween', duration: 1 }}
       >
         <div
-          onMouseDown={handleMouseDown}
-          onMouseUp={handleMouseUp}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+          onPointerMove={handlePointerMove}
+          onPointerLeave={handlePointerLeave}
           ref={refItem}
           className='projects-wrap'
         >
@@ -119,6 +119,7 @@ const Projects = () => {
               index={index}
               ref={refCard}
               isHome={true}
+              isDragging={isDragging}
             />
           ))}
         </div>

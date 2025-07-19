@@ -15,7 +15,6 @@
 .projects-wrap {
   display: flex;
   gap: 1em;
-
   margin-block-start: 4em;
   width: 100%;
   margin-inline: auto;
@@ -25,6 +24,11 @@
   scroll-behavior: smooth;
 }
 
+.projects-wrap.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
 .projects-wrap::-webkit-scrollbar {
   height: 1px;
   background-color: transparent;
@@ -32,10 +36,17 @@
 
 .projects-wrap .project-card {
   flex: 0 0 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 
   @media (min-width: 768px) {
     flex: 0 0 calc(100% / 3);
   }
+}
+
+.project-card.dragging .project-card {
+  scroll-snap-align: none;
+  scroll-snap-stop: none;
 }
 
 .projects-wrap .description-project {
@@ -56,16 +67,6 @@
 .projects-wrap .description-project p {
   font-size: 0.75rem;
 }
-
-/* .buttons-wrapper {
-  position: absolute;
-  z-index: 10;
-  top: 25%;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-} */
 
 .button-project {
   width: 44px;
