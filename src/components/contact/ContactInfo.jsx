@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Heading from '../header/Heading';
 import { contact } from '../data/db';
 import ContactInfoCard from './ContactInfoCard';
+import axios from 'axios';
 
 const variant = {
   hidden: { opacity: 0, scale: 1.1 },
@@ -42,9 +43,12 @@ const variant3 = {
 };
 
 const ContactInfo = () => {
-  const [text, setText] = useState('');
-  const [email, setEmail] = useState('');
-  const [questions, setQuiestions] = useState('');
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [status, setStatus] = useState('');
   const refHeading = useRef(null);
   const refForm = useRef(null);
 
@@ -57,6 +61,43 @@ const ContactInfo = () => {
     once: true,
     margin: '0px 0px -250px 0px',
   });
+
+  const handleChange = (e) => {
+    setForm((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    try {
+      const res = await axios.post(
+        '/.netlify/functions/send-message',
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        {
+          headers: {
+            Accept: 'application/json',
+          },
+        }
+      );
+      if (res.data.success) {
+        setStatus('Poruka uspešno poslata!');
+        setForm({ name: '', email: '', message: '' });
+      } else {
+        setStatus('Došlo je do greške. Pokušajte ponovo.');
+      }
+    } catch (error) {
+      console.error('Greška pri slanju:', error);
+      setStatus('Došlo je do greške. Pokušajte ponovo.');
+    }
+  };
 
   return (
     <>
@@ -106,15 +147,15 @@ const ContactInfo = () => {
               initial='hidden'
               animate={isInView2 ? 'visible' : 'hidden'}
               className='contact-form '
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubmit}
             >
               <div>
                 <label htmlFor='name'>
                   <input
                     type='text'
                     placeholder='Your Name*'
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
+                    value={form.name}
+                    onChange={handleChange}
                     name='name'
                     id='name'
                     required
@@ -126,23 +167,27 @@ const ContactInfo = () => {
                     name='email'
                     id='email'
                     placeholder='Your Email*'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={form.email}
+                    onChange={handleChange}
                     required
                   />
                 </label>
               </div>
               <label htmlFor='question'>
                 <textarea
-                  name='question'
-                  id='question'
+                  name='message'
+                  id='message'
                   placeholder='Question*'
-                  value={questions}
-                  onChange={(e) => setQuiestions(e.target.value)}
+                  value={form.message}
+                  onChange={handleChange}
                   required
                 ></textarea>
               </label>
               <button>Send A Message</button>
+
+              {status === 'loading' && <p>Šaljem...</p>}
+              {status === 'success' && <p>Poruka poslata!</p>}
+              {status === 'error' && <p>Greška! Pokušajte ponovo.</p>}
             </motion.form>
           </div>
 

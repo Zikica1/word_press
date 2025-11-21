@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
+    "axios": "^1.13.2",
     "framer-motion": "^11.11.9",
+    "nodemailer": "^7.0.10",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-countup": "^6.5.3",
