@@ -1,20 +1,18 @@
-# 🌐 WebWorker — WordPress & Web Development Agency
+# 🌐 WebWorker — Web Development Agency
 
 [👉 Posetite naš zvanični sajt](https://www.webworker.rs)
 
-WebWorker je profesionalna web agencija specijalizovana za razvoj brzih, sigurnih i modernih WordPress i custom web sajtova.  
+WebWorker je profesionalna web agencija specijalizovana za razvoj brzih, sigurnih i modernih custom web sajtova.  
 Pomažemo kompanijama da unaprede online prisustvo i pretvore posetioce u klijente.
 
 ---
 
 ## 🚀 Naše usluge
 
-- 🔧 WordPress Development (custom teme & pluginovi)
 - 🎨 UI/UX Web Dizajn
 - ⚡ Optimizacija brzine (Core Web Vitals)
 - 🔍 SEO optimizacija i analiza
 - 🛠 Održavanje i tehnička podrška
-- 🛒 WooCommerce razvoj
 - 🌍 Izrada poslovnih sajtova
 
 ---
@@ -22,9 +20,8 @@ Pomažemo kompanijama da unaprede online prisustvo i pretvore posetioce u klijen
 ## 🧰 Tehnologije koje koristimo
 
 - HTML5 / CSS3 / JavaScript  
-- React / Next.js  
-- WordPress / WooCommerce  
-- PHP / MySQL  
+- React 
+- Node.js
 - GSAP / Framer Motion  
 - Git / GitHub / Vite  
 
@@ -36,8 +33,6 @@ Pomažemo kompanijama da unaprede online prisustvo i pretvore posetioce u klijen
 - SEO-first pristup  
 - Mobile-first responsive dizajn  
 - Jasna komunikacija i brza isporuka  
-- Više od 10 godina iskustva u industriji  
-
 ---
 
 ## 📬 Kontakt
