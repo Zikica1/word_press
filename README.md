@@ -1,8 +1,41 @@
-# React + Vite
+# 🌐 WebWorker — Web Development Agency
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[👉 Posetite naš zvanični sajt](https://www.webworker.rs)
 
-Currently, two official plugins are available:
+WebWorker je profesionalna web agencija specijalizovana za razvoj brzih, sigurnih i modernih custom web sajtova.  
+Pomažemo kompanijama da unaprede online prisustvo i pretvore posetioce u klijente.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## 🚀 Naše usluge
+
+- 🎨 UI/UX Web Dizajn
+- ⚡ Optimizacija brzine (Core Web Vitals)
+- 🔍 SEO optimizacija i analiza
+- 🛠 Održavanje i tehnička podrška
+- 🌍 Izrada poslovnih sajtova
+
+---
+
+## 🧰 Tehnologije koje koristimo
+
+- HTML5 / CSS3 / JavaScript  
+- React 
+- Node.js
+- GSAP / Framer Motion  
+- Git / GitHub / Vite  
+
+---
+
+## 📈 Zašto WebWorker?
+
+- 100% prilagođeni sajtovi  
+- SEO-first pristup  
+- Mobile-first responsive dizajn  
+- Jasna komunikacija i brza isporuka  
+---
+
+## 📬 Kontakt
+
+**🌐 Web sajt:** https://www.webworker.rs  
+**📧 Email:** webworker.office@webworker.rs  
