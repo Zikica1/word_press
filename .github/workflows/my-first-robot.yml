@@ -1,0 +1,11 @@
+name: My First GitHub Robot
+
+on: [push]
+
+jobs:
+  greetings-business:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print a message in the terminal
+        run: echo "Hello! You have successfully run GitHub Actions!"
