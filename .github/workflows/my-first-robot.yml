@@ -1,22 +1,30 @@
 name: Build Test
 
-on: [push]
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Kloniraj repo
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Instaliraj Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22.17.0
+          cache: 'npm'
 
-      - name: Instaliraj dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Pokreni build
+      - name: Run lint
+        run: npm run lint
+
+      - name: Run build
         run: npm run build
