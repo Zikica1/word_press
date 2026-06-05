@@ -1,11 +1,22 @@
-name: My First GitHub Robot
+name: Build Test
 
 on: [push]
 
 jobs:
-  greetings-business:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print a message in the terminal
-        run: echo "Hello! You have successfully run GitHub Actions!"
+      - name: Kloniraj repo
+        uses: actions/checkout@v4
+
+      - name: Instaliraj Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.17.0
+
+      - name: Instaliraj dependencies
+        run: npm install
+
+      - name: Pokreni build
+        run: npm run build
