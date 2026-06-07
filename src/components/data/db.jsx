@@ -164,6 +164,7 @@ export const testimonial = [
   },
 ];
 
+//pricing
 export const pricing = [
   {
     id: 0,
