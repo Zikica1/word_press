@@ -9,5 +9,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy app
-        run: echo 'Deploying to production'
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.17.0
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Netlify
+        run: |
+          npm install -g netlify-cli
+          netlify deploy --prod\
+          --dir=build \
+          --site=$NETLIFY_SITE_ID \
+          --auth=$NETLIFY_AUTH_TOKEN
