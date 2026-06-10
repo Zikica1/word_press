@@ -74,8 +74,6 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const buttonRef = useRef(null);
 
-  const x = ;
-
   const activeStyle = {
     fontWeight: 'bold',
   };
